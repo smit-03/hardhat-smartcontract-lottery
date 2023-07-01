@@ -6,7 +6,6 @@ const GAS_PRICE_LINK = 1e9; // link per gas, is this the gas lane? // 0.00000000
 module.exports = async function ({ getNamedAccounts, deployments }) {
     const { deploy, log } = deployments;
     const { deployer } = await getNamedAccounts();
-    const chainId = network.config.chainId;
     const _args = [BASE_FEE, GAS_PRICE_LINK];
     if (developmentChains.includes(network.name)) {
         log("Local network detected! Deploying mocks");
